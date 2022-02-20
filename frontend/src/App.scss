@@ -1,0 +1,637 @@
+
+$color1:#06071b;
+$color2:#111753;
+$color3:#ec2477;
+$colorForm2:#d4c8fd;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html{
+	height: 100%;
+	width:100%;
+	background-color: $color1;
+}
+.Navbar{
+	width: 100%;
+	height: 4em;
+	display: flex;
+	align-items: center;
+	background-color: $color2;
+	
+		a{
+			text-align: center;
+			margin-left:30px;
+			margin:10px;
+			text-decoration: none;
+			font-weight: bold;
+			color: white;
+			
+		}
+		div{
+			margin:200px;
+		}
+		
+}
+
+.App{
+	width:100%;
+	height: 100%;
+	color:white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: $color1;
+}
+
+
+.MoviesListPage{
+	max-width: 900;
+	margin-left: 10vw;
+	margin-right: 10vw;
+	display:grid;
+	
+
+	h3{
+	text-align: center;
+	
+	}
+
+	
+}
+
+select{
+	color:white;
+	border:0px;
+	background-color: $color1;
+	border-bottom:2px solid $color3;
+	width: 150px;
+	height:30px;
+}
+
+
+
+
+.MoviesList{
+
+	
+	display:grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-rows:100px 1fr;
+	.link{
+	
+		margin-right: 10px;
+		max-width: 20em;
+		// width: 100%;
+		
+		img{
+			width: 100%;
+			height: 70%;
+		}
+	}
+	.MoviesFilters{
+		grid-area:2/1/3/2;
+		display: flex;
+		flex-direction:column;
+		.Filter{
+			margin-top:20px;
+		}
+
+		.checkboxFilter{
+			margin-top:20px;
+			display:grid;
+			grid-template-columns: 12px  1fr;
+		}
+		.selectFilter{
+			margin-top: 20px;
+
+		}
+		
+	}
+
+	.SortAndButtons{
+		grid-area: 1/1/2/3;
+		display: flex;
+		align-items: center;
+		justify-content:space-around;
+	}
+
+	.OnlyMovies{
+		grid-area:2/2/3/3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap:wrap;
+	}
+
+	.Movie{
+		
+		width: 200px;
+		height: 400px;
+		border:2px solid black;
+		margin:10px;
+		.GenreAndInput{
+			margin-top:10px;
+			display:flex;
+			align-items: center;
+			justify-content: space-around;
+			input{
+				width:15px;
+				height:15px;
+			}
+		}
+	}
+}
+
+.PersonsList{
+	
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	
+
+	.SortAndButtons{
+		margin-top:30px;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		button{
+			margin-top:0;
+			margin-right:10px;
+		}
+	}
+	.Persons{
+		display:flex;
+		flex-wrap:wrap;
+	}
+	.Person{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 30px;
+		margin:20px;
+
+		img{
+			max-height:150px;
+			grid-area:1/1/2/2;
+
+		}
+		a{
+			text-decoration: none;
+			color:white;
+			font-weight: bold;
+		}
+
+	}
+
+}
+
+
+
+.MainMovieDetail{
+	margin-left: 10vw;
+	margin-right: 10vw;
+	min-width:80%;
+	.MovieDetail{
+		width:100%;
+		display: grid;
+		grid-template-columns: 40% 30% 30%;
+		grid-template-rows: 1fr 1fr 1fr 1fr 2fr 2fr 2fr;
+		margin-top:30px;
+
+		.title{
+			margin-top: 0;
+			grid-area: 1/2/2/4;
+			background-color:$color1;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight:bold;
+		}
+
+		img{
+			grid-area: 1/1/7/2;
+			width:90%;
+			height:90%;
+			margin-right: 1em;
+
+		}
+
+		.link{
+			font-weight:bold;
+			margin-top:2em;
+			margin-left:1em;
+			grid-area: 2/2/3/4;
+			text-decoration: none;
+			color:white;
+			display: flex;
+			align-items:center;
+		}
+
+		.link:hover{
+			color:$color3;
+		}
+
+		#Select{
+			width:180px;
+			height: 30px;
+			grid-area:5/2/6/3;
+			align-self: center;
+			margin-left:13px;
+		}
+
+		.description{
+			grid-area: 7/1/8/4;
+		}
+		.genre{
+			margin-top:2em;
+			margin-left:1em;
+			grid-area: 3/2/4/3;
+		}
+		.release_date{
+			margin-top:2em;
+			margin-left:1em;
+			grid-area: 4/2/5/3;
+			display: flex;
+			align-items: center;
+		
+		}
+		.ChangeDirector{
+			grid-area: 5/3/6/4;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			button{
+				margin-top:0px;
+			}
+		}
+
+		.buttons{
+			grid-area: 6/2/7/4;
+			display:flex;
+			justify-content: space-around;
+			button{
+				margin-top:0;
+			}
+		}
+
+
+
+
+	}
+}
+#PersonForm{
+
+	background-color: $colorForm2;
+	h2{
+		color: $color2;
+		margin-bottom: 20px;
+		.span{
+			color:$color3;
+		}
+
+	}
+	label{
+		color:$color2;
+	}
+	
+}
+
+.MainForm{
+	background-color:$color2 ;
+	padding:50px;
+	padding-left: 80px;
+	padding-right: 80px;
+	margin:20px;
+	border-radius: 20px;
+	h2{
+	
+		margin-bottom: 20px;
+		.span{
+			color:#f3b80f;
+		}
+		
+	}
+
+	Form{
+
+		color: white;
+		font-size: 20px;
+		font-family: 'Roboto Thin', sans-serif;
+		#Field{
+			margin-bottom: 10px;
+			height:24px;
+		}
+		select{
+			background-color: white;
+			border:none;
+			color:black;
+			height:24px;
+		}
+	}
+}
+
+
+
+button{
+	
+	margin-top:40px;
+	width: 135px;
+	height: 40px;
+	border: none;
+	outline: none;
+	background: $color3;
+	color:white;
+	font-size: 16px;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+	
+}
+
+button:hover{
+	background-color: #af064c;
+}
+
+
+.PersonDetailsMain{
+	
+	.PersonDetails{
+		margin-top:30px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+		img{
+			grid-area: 1/1/5/2;
+			max-width:250px;
+			margin-right:20px;
+		}
+		.PersonJob{
+			margin-top:20px;
+			color:#f3b80f;
+			font-size:12px;
+		}
+
+		.PersonName{
+			font-size:26px;
+			font-weight:bold;
+		}
+	}
+	#moviesList{
+		display: flex;
+		.Movie{
+			margin:20px;
+			img{
+				height: 200px;
+				width:160px;
+			}
+			
+		}
+	}
+	.buttons{
+		button{
+			margin-left:50px;
+		}
+	}
+}
+
+.OnlyMovies{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+@media only screen and (min-width: 100px) and (max-width: 600px){
+	
+
+	.MainMovieDetail{
+	
+		margin-left: 15vw;
+		margin-right: 15vw;
+		
+		.MovieDetail{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content:center;
+			.title{
+				height: 4em;
+				padding:1em;
+				
+			}
+			img{
+				height:400px;
+				width:300px
+
+			}
+			.buttons{
+				margin-top:20px;
+				button{
+					margin:10px;
+				}
+			}
+			.genre{
+				margin-bottom:20px;
+			}
+
+			#Select{
+				margin-top:20px
+			}
+
+			.ChangeDirector{
+				margin:20px;
+			}
+		
+		}
+
+	}
+
+
+
+
+	.PersonDetailsMain{
+	
+		.PersonDetails{
+			margin-top:30px;
+			display: flex;
+			flex-direction:column;
+			align-items:center;
+		
+			img{
+				margin-bottom:20px;
+			}
+			
+			.PersonName{
+				
+				margin-bottom:10px;
+			}
+
+			.PersonBirthDate{
+				margin-bottom:20px;
+			}
+
+			.PersonNationality{
+				margin-bottom:20px;
+			}
+		}
+		.directorMovies{
+			text-align:center;
+		}
+
+		#moviesList{
+			display: flex;
+			flex-wrap:wrap;
+			.Movie{
+				margin:20px;
+				img{
+					height: 100px;
+					width:80px;
+				}
+				font-size:10px;
+				
+			}
+		}
+		.buttons{
+			align-items:center;
+			button{
+				margin-left:50px;
+			}
+		}
+	}
+	
+
+	.Navbar{
+		width:100%;
+		display: flex;
+		justify-content: space-around;
+		div{
+			margin:0;
+		}
+	}
+
+.PersonsList{
+
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	align-items: center;
+
+	.SortAndButtons{
+		margin-top:30px;
+		display: flex;
+		flex-direction:column;
+		flex-wrap:wrap;
+		button{
+			margin-bottom:15px;
+			margin-right:10px;
+		}
+		.Filter{
+			margin-bottom:15px;
+		}
+	}
+	.Persons{
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+	}
+	.Person{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 30px;
+		margin:20px;
+
+		img{
+			max-height:150px;
+			grid-area:1/1/2/2;
+
+		}
+		a{
+			text-decoration: none;
+			color:white;
+			font-weight: bold;
+		}
+
+	}
+
+}
+
+	.MoviesList{
+		display: flex;
+		flex-direction:column;
+		.link{
+	
+			margin-right: 10px;
+			max-width: 20em;
+			// width: 100%;
+			
+			img{
+				width: 100%;
+				height: 70%;
+			}
+		}
+		.MoviesFilters{
+		
+			display: flex;
+			flex-direction:column;
+			.Filter{
+				margin-top:20px;
+				display: flex;
+				justify-content: center;
+				p{
+					margin-right:10px;
+				}
+			}
+	
+			.checkboxFilter{
+				margin-top:20px;
+				display:flex;
+				flex-wrap: wrap;
+				input{
+					margin-left:5px;
+				}
+			}
+			.selectFilter{
+				margin-top: 20px;
+				display: flex;
+				justify-content: center;
+	
+			}
+			
+		}
+	
+		.SortAndButtons{
+		
+			display: flex;
+			align-items: center;
+			flex-wrap:wrap;
+			.Sorting{
+				margin-top:10px;
+			}
+		}
+	
+		.OnlyMovies{
+			grid-area:2/2/3/3;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-wrap:wrap;
+		}
+	
+		.Movie{
+			
+			width: 200px;
+			height: 400px;
+			border:2px solid black;
+			margin:10px;
+		}
+	
+	}
+
+
+}
